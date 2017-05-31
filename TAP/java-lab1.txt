@@ -1,0 +1,71 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package javaapplication3;
+
+import java.io.FileReader;
+import java.util.Scanner;
+
+public class JavaApplication3 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args)  {
+
+        try {
+            Scanner sc;
+            sc = new Scanner(new FileReader("d:\\test.txt"));
+            
+            int ok = 1;
+            System.out.println("1.Citire int");
+            System.out.println("2.Citire double");
+            System.out.println("3.Citire string");
+            System.out.println("4.Iesire program");
+            
+            while (ok == 1) {
+                System.out.println("Introduceti optiunea aleasa:");
+                int optiune = sc.nextInt();
+                if (optiune == 1) {
+                    System.out.println("Citire int");
+                    try {
+                        int x = sc.nextInt();
+                        System.out.printf("Numarul este %d\n", x);
+                    } catch (Exception ex) {
+                        System.out.println("nu a-ti introdus un numar intreg");
+                    }
+                }
+                
+                if (optiune == 2) {
+                    System.out.println("Citire double ");
+                    try {
+                        double x = sc.nextDouble();
+                        System.out.printf("Numarul este %f\n", x);
+                    } catch (Exception ex) {
+                        System.out.println("nu a-ti introdus un numar real");
+                    }
+                }
+                
+                if (optiune == 3) {
+                    System.out.println("Citire string ");
+                    try {
+                        sc.nextLine();
+                        String x = sc.nextLine();
+                        System.out.printf("Stringul este %s\n", x);
+                    } catch (Exception ex) {
+                        System.out.println("nu a-ti introdus un string");
+                    }
+                }
+                
+                if (optiune == 4) {
+                    ok = 0;
+                }
+            }
+        } catch (Exception ex) {
+            System.out.println("exceptie");
+        }
+    }
+
+}

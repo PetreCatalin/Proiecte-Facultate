@@ -1,0 +1,10 @@
+E:\Projects&Work\BottomUpParsing\BottomUpParsing\bin\Debug\BottomUpParsing.exe
+E:\Projects&Work\BottomUpParsing\BottomUpParsing\bin\Debug\BottomUpParsing.pdb
+E:\Projects&Work\BottomUpParsing\BottomUpParsing\obj\x86\Debug\BottomUpParsing.exe
+E:\Projects&Work\BottomUpParsing\BottomUpParsing\obj\x86\Debug\BottomUpParsing.pdb
+E:\Projects&Work\BottomUpParsing\BottomUpParsing\obj\x86\Debug\BottomUpParsing.csprojResolveAssemblyReference.cache
+C:\Users\catal\Desktop\bottomupparsing\BottomUpParsing\obj\x86\Debug\BottomUpParsing.exe
+C:\Users\catal\Desktop\bottomupparsing\BottomUpParsing\obj\x86\Debug\BottomUpParsing.pdb
+C:\Users\catal\Desktop\bottomupparsing\BottomUpParsing\bin\Debug\BottomUpParsing.exe
+C:\Users\catal\Desktop\bottomupparsing\BottomUpParsing\bin\Debug\BottomUpParsing.pdb
+C:\Users\catal\Desktop\bottomupparsing\BottomUpParsing\obj\x86\Debug\BottomUpParsing.csprojResolveAssemblyReference.cache

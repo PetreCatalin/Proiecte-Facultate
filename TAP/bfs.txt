@@ -1,0 +1,36 @@
+package bfs;
+
+import java.util.*;
+
+public class Bfs {
+
+    static int c[]=new int[100],i,inc,sf,sf1,A[][]=new int[100][100],viz[]=new int[100],n,m,x,y,j;
+    
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        n=sc.nextInt();
+        m=sc.nextInt();
+        for (i=1;i<=m;++i) {
+           x=sc.nextInt();
+           y=sc.nextInt();
+           A[x][y]=1;
+           A[y][x]=1;
+        }
+        
+        viz[1]=1;
+        c[1]=1; inc=1;sf=1;sf1=1;
+        
+        while (inc<=sf) {
+        for (i=inc;i<=sf;++i) {
+            x=c[i];
+            for (j=1;j<=n;++j)
+                if (viz[j]==0 &&A[x][j]==1) {viz[j]=1;++sf1;c[sf1]=j;}
+        }
+        inc=sf+1;
+        sf=sf1; 
+    }
+        
+       for (i=1;i<=sf;++i)
+           System.out.printf("%d ",c[i]);
+    }
+}

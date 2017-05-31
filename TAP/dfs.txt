@@ -1,0 +1,31 @@
+package dfs;
+
+import java.util.*;
+
+public class Dfs {
+
+    static int i,j,n,m,A[][]=new int [100][100],x,y,viz[]=new int[100];
+    
+    public static void dfs(int x) {
+        int i;
+        System.out.printf("%d ",x);viz[x]=1;
+        for (i=1;i<=n;++i)
+            if (A[x][i]==1 &&viz[i]==0) dfs(i);
+    }
+    
+    
+    public static void main(String[] args) {
+       Scanner sc=new Scanner(System.in);
+       n=sc.nextInt();
+       m=sc.nextInt();
+       for (i=1;i<=m;++i) {
+           x=sc.nextInt();
+           y=sc.nextInt();
+           A[x][y]=1;
+           A[y][x]=1;
+       }
+      
+       dfs(1);
+    }
+    
+}

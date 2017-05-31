@@ -1,0 +1,126 @@
+#im {
+	height: 10em;
+	width: 100%;
+}
+body {
+    background:url("books1.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+nav {
+   min-width: 20em; 
+}
+nav ul {
+   background: linear-gradient(90deg, 
+     rgba(255, 255, 255, 0) 0%, 
+     rgba(255, 255, 255, 0.2) 25%, 
+     rgba(255, 255, 255, 0.2) 75%, 
+     rgba(255, 255, 255, 0.1) 100%);
+	margin-left:2em;
+}
+nav ul li {
+    display:inline-block;
+	position:relative;
+} 
+nav ul ul{ /*drop down*/
+	visibility:hidden;
+	display:table-row-group;
+	position:absolute;
+}
+nav ul li:hover ul{
+	color:white;
+	visibility:visible;
+}
+
+nav ul li a{
+	margin-left:5em;
+	margin-right:3em;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-family: Arial;
+    display: block;
+}
+
+h1 {
+	color:white;
+	font-size:1.5em;
+	text-align:center;
+}
+#accesate{	
+	color:white;
+	line-height: 1.3em;
+	font-size: 1.4em;
+	margin-left:6em;
+}
+h2{
+	color:white;
+	margin-left:3em;
+}
+
+h2::first-letter {
+    font-size: xx-large;
+	margin-left:4em;
+}
+
+#fb {
+	height:4em;
+	width:4em;
+	margin-top:1em;
+}
+
+h3{
+	color:white;
+	margin-top:2em;
+	margin-left:1em;
+	margin-bottom:2em;
+}
+
+#copy {
+	text-align:center; 
+	color:white;
+	font-size:1.75em;
+}
+
+#contact {
+	font-size:1.3em;
+	color:white;
+}
+
+#contact p{
+	margin-left:1em;
+}
+
+#contact a:hover {
+    color: white;
+}
+
+a:hover {
+    color: blue;
+}
+
+aside{
+	padding-bottom:3em;
+	padding-left:3em;
+	padding-right:3em;
+	margin-right:3em;
+	max-width:30%;
+	min-width:150px;
+	float:right;
+	border:solid;
+	color:white;
+}
+.buton {
+	margin:auto;
+	color:white;
+	background-color:red;
+}
+
+aside p {
+	text-align:center;
+	font-size:1.5em;
+}
+
+

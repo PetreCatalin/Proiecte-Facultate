@@ -1,0 +1,93 @@
+package javaapplication18;
+
+interface IOrar {
+    public void afiseaza();
+}
+
+//o clasa abstracta nu poate fi instantiata
+abstract class Persinfacultate extends Persoana {
+    String facultate;
+    public Persinfacultate(String _facultate) {
+        facultate=_facultate;
+    }
+    public String getFacultate() {
+        return facultate;
+    }
+    public abstract IOrar getOrar();
+    
+}
+
+//////////////////////
+
+public class Student extends Persinfacultate {
+    IOrar orar;
+    public Student(String _facultate) {
+        super(_facultate); //super apeleaza constructorul din clasa de baza
+        orar=new OrarStudent();
+    }
+    public IOrar getOrar() {
+        return orar;
+    }  
+}
+
+/////////////////////
+
+public class Profesor extends Persinfacultate {
+    IOrar orar;
+    public Profesor(String _facultate) {
+        super(_facultate);
+        orar=new OrarProfesor();
+    }
+    public IOrar getOrar() {
+        return orar;
+    }    
+}
+
+/////////////////////
+
+public class OrarStudent implements IOrar {
+    public void afiseaza() {
+        System.out.print("Orar Student\n");
+    }
+}
+
+////////////////////
+
+public class OrarProfesor implements IOrar {
+    public void afiseaza() {
+        System.out.print("Orar Profesor\n");
+    }
+}
+
+
+
+Un proces contine mai multe threaduri
+
+package javaapplication19;
+
+
+public class JavaApplication19 {
+
+    public static void main(String[] args) {
+        test t1=new test(1000);
+        test t2=new test(500);
+        t1.start();
+        t2.start();
+    }
+}
+
+//////////////////
+
+public class test extends Thread {
+    int contor;
+    public test(int contor) {
+        this.contor=contor;
+    }
+    
+    public void run()
+    {
+        try {Thread.sleep(contor);}
+        catch (Exception ex) {}
+        System.out.printf("test %d",contor);
+    }
+}

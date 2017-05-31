@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<HTML> 
+    <HEAD> 
+        <TITLE>Agenda Telefon</TITLE> 
+        <style>
+            h1 {
+             margin-left:2em;
+             color:red;
+            }
+            form {
+                margin-left:3em;
+                color:blue;
+            }
+            input {
+                background-color:white;
+                color:red;
+            }
+            #dreapta {
+                margin-top:2em;
+                float:right;
+                margin-right:6.5em;
+                padding-right:2em;
+                padding-bottom:2em;
+                border:solid;
+            }
+            
+            #centru{
+                margin-top:2em;
+                float:right;
+                margin-right:10em;
+                padding-right:2em;
+                padding-bottom:2em;
+                border:solid;
+            }
+            
+            #stanga{
+                margin-top:2em;
+                float:right;
+                margin-right:10em;
+                padding-right:2em;
+                padding-bottom:2em;
+                border:solid;
+            }
+        </style>
+    </HEAD> 
+    <BODY>   <BR>  
+        <aside id="dreapta"> 
+        <H1>Cauta un contact </H1> <br>
+        <FORM  METHOD=GET  ACTION="CautaServlet">
+            Nume:(*)  <br>  <INPUT  TYPE="Text"  NAME="Nume" VALUE = "" > <br> 
+            Prenume:(*) <br> <INPUT  TYPE="Text"  NAME="Prenume" VALUE = "" > <br> <br> <br>
+            <INPUT  TYPE="Submit"  VALUE = "Cauta Contact"> 
+        </form>
+        <br>
+         <H1>Sterge un contact</H1> <br>
+        <FORM  METHOD=GET  ACTION="StergeServlet">
+            Nume:(*)  <br>  <INPUT  TYPE="Text"  NAME="Nume" VALUE = "" > <br> 
+            Prenume:(*) <br> <INPUT  TYPE="Text"  NAME="Prenume" VALUE = "" > <br> <br> <br>
+            <INPUT  TYPE="Submit"  VALUE = "Stergere Contact"> 
+        </form>
+        <br>
+        </aside>
+        
+        <aside id="centru">
+        <H1>Modifica un contact</H1> <br>
+        <FORM  METHOD=GET  ACTION="ModificaServlet">
+            Nume:(*)  <br>  <INPUT  TYPE="Text"  NAME="Nume" VALUE = "" > <br> 
+            Prenume:(*) <br> <INPUT  TYPE="Text"  NAME="Prenume" VALUE = "" > <br> 
+            Telefon Mobil:(*) <br> <INPUT  TYPE="Text"  NAME="Mobil" VALUE = "" > <br>
+            Telefon Fix: <br>  <INPUT  TYPE="Text"  NAME="Fix" VALUE = "" > <br>
+            E-mail:(*) <br>  <INPUT  TYPE="Text"  NAME="Email" VALUE = "" > <br>
+            Adresa: <br> <INPUT  TYPE="Text"  NAME="Adresa" VALUE = "" > <br>
+            Oras: <br>  <INPUT  TYPE="Text"  NAME="Oras" VALUE = "" > <br>
+            Judet: <br>  <INPUT  TYPE="Text"  NAME="Judet" VALUE = "" > <br>
+            Cod Postal: <br> <INPUT  TYPE="Text"  NAME="Codp" VALUE = "" > <br> <br> <br>
+            <INPUT  TYPE="Submit"  VALUE = "Modificare Contact"> 
+        </form> 
+        </aside>
+     
+      <aside id="stanga">
+        <h1> Adauga un contact  </h1> <br> 
+    <FORM  METHOD=GET  ACTION="PersonalServlet">   
+        Nume:(*) <br>  <INPUT  TYPE="Text"  NAME="Nume" VALUE = "" > <br>
+        Prenume:(*) <br> <INPUT  TYPE="Text"  NAME="Prenume" VALUE = "" > <br>
+        Telefon Mobil:(*) <br> <INPUT  TYPE="Text"  NAME="Mobil" VALUE = "" > <br>
+        Telefon Fix: <br>  <INPUT  TYPE="Text"  NAME="Fix" VALUE = "" > <br>
+        E-mail:(*) <br>  <INPUT  TYPE="Text"  NAME="Email" VALUE = "" > <br>
+        Adresa: <br> <INPUT  TYPE="Text"  NAME="Adresa" VALUE = "" > <br>
+        Oras: <br>  <INPUT  TYPE="Text"  NAME="Oras" VALUE = "" > <br>
+        Judet: <br>  <INPUT  TYPE="Text"  NAME="Judet" VALUE = "" > <br>
+        Cod Postal: <br> <INPUT  TYPE="Text"  NAME="Codp" VALUE = "" > <br>
+    <BR><BR> 
+    <INPUT  TYPE="Submit"  VALUE = "Adaugare Contact">   <br> <br>
+     </FORM> 
+      </aside>
+    </BODY> 
+</HTML> 

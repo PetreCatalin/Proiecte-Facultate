@@ -1,0 +1,32 @@
+package back;
+
+import java.util.*;
+
+public class Back {
+    
+    static int sol[]=new int[100],i,k,n;
+    
+    public static void afiseaza (int k) {
+        for (int i=1;i<=k;++i)
+            System.out.printf("%d ",sol[i]);
+        System.out.println();
+    }
+    
+    public static void back(int k) {
+        for (int i=sol[k-1]+1;i<=n;++i) {
+            sol[k]=i;
+            afiseaza(k);
+            back(k+1);
+            }
+    }
+       
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        n=sc.nextInt();
+        
+        sol[0]=0;
+        back(1);
+        System.out.println("Combinari: ");
+    }
+    
+}

@@ -1,0 +1,45 @@
+package stiva;
+
+import java.util.*;
+
+public class Stiva {
+    static int n,i,poz,ok=1;
+    static String stiva=new String();
+    static char[] st=new char[100];
+  
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        stiva=sc.next();
+        char s[]=stiva.toCharArray();
+        
+        n=stiva.length();
+        poz=0;
+        for (i=0;i<n;++i) {
+           if (s[i]== '(' || s[i]=='[' || s[i]=='{') {
+               ++poz;
+               st[poz]= s[i];
+           }
+           if (s[i]==')') {
+               if (st[poz]=='(') --poz;
+               else
+               {ok=0;break;}
+           }
+            if (s[i]==']') {
+               if (st[poz]=='[') --poz;
+               else
+               {ok=0;break;}
+           }
+            if (s[i]=='}') {
+               if (st[poz]=='{') --poz;
+               else
+               {ok=0;break;}
+           }
+        }
+           
+         if (ok==1 &&poz==0)  
+             System.out.println("Sir parantezat corect");
+         else
+             System.out.println("Sir gresit");
+    }
+    
+}

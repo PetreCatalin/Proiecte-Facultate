@@ -1,0 +1,106 @@
+#im {
+	height: 10em;
+	width: 100%;
+}
+body {
+     background:url("books1.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+     background-size: cover;
+}
+
+nav {
+   min-width: 500px; 
+}
+nav ul {
+   background: linear-gradient(90deg, 
+     rgba(255, 255, 255, 0) 0%, 
+     rgba(255, 255, 255, 0.2) 25%, 
+     rgba(255, 255, 255, 0.2) 75%, 
+     rgba(255, 255, 255, 0.1) 100%);
+	margin-left:2em;
+}
+nav ul li {
+    display:inline-block;
+	position:relative;
+} 
+nav ul ul{ /*drop down*/
+	visibility:hidden;
+	display:table-row-group;
+	position:absolute;
+}
+nav ul li:hover ul{
+	color:white;
+	visibility:visible;
+}
+
+nav ul li a{
+	margin-left:5em;
+	margin-right:3em;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-family: Arial;
+    display: block;
+}
+
+table {
+	margin-top:4em;
+}
+
+table,th,td {
+	margin-left:7em;
+    border: 3px solid black;
+    border-collapse: collapse;
+}
+table th{
+	color:blue;
+	font-size:1.5em;
+}
+th,td {
+    padding:1em;
+	color:white;
+	font-size:1.25em;
+}
+
+section p {
+	font-size:1.3em;
+	margin-left:2em;
+	color:white;
+}
+
+section h2 {
+	color:white;
+}
+
+section p::first-letter {
+	font-size: xx-large;
+	margin-left:3.2em;
+}
+
+section img{
+	margin-left:3.5em;
+	height:19em;
+	width:14em;
+	border-radius: 50px 50px 50px 50px;
+}
+
+section img:hover {
+	transform:scale(1.5,1.5);
+}
+
+#copy {
+	text-align:center; 
+	color:white;
+	font-size:1.75em;
+}
+
+tr:hover{background-color:red}
+
+a:visited {
+    color: white;
+}
+
+a:hover {
+    color: blue;
+}

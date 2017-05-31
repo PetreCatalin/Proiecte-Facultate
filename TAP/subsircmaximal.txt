@@ -1,0 +1,44 @@
+package javaapplication5;
+
+import java.util.Scanner;
+
+public class JavaApplication5 {
+    
+    static int n,i,maxim,j,m;
+    static int a[]=new int[100],v[]=new int[100],fin[]=new int[100],nr;
+
+    public static void main(String[] args) {
+         Scanner sc;
+            sc = new Scanner(System.in);
+            n=sc.nextInt();
+            for (i=1;i<=n;++i)
+                a[i]=sc.nextInt();
+            v[1]=1;
+            
+            m=1;
+            for (i=2;i<=n;++i) {
+                maxim=1;
+                for (j=i-1;j>=1;--j)
+                    if (a[i]>a[j] &&v[j]+1>maxim) maxim=v[j]+1;
+                
+                v[i]=maxim;
+                if (v[i]>m) m=v[i];
+            }
+            
+          //   for (i=1;i<=n;++i)
+             //  System.out.printf("%d",v[i]);
+            
+            System.out.printf("Lungimea este %d\n",m);
+           
+           for (i=n;i>=1;--i) 
+               if (v[i]==m) {
+                   ++nr;
+                   fin[nr]=a[i];
+                   --m;
+               }
+            
+           for (i=nr;i>=1;--i)
+               System.out.printf("%d ",fin[i]);
+            
+    }
+}

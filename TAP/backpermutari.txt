@@ -1,0 +1,40 @@
+
+package javaapplication2;
+
+import java.util.Scanner;
+
+public class JavaApplication2 {
+    
+    static int n,sol[]=new int[100];
+     
+     static void afiseaza()
+        {
+        for(int i=1;i<=n;i++)
+            System.out.printf("%d ",sol[i]);
+        System.out.print('\n');
+        }
+     
+    static boolean valid(int k)
+     {
+         for (int i=1;i<k;++i)
+             if (sol[i]==sol[k]) return false;
+         return true;
+     }
+    
+     static void back (int k)  {
+         if (k>n) afiseaza();
+         else
+             for (int i=1;i<=n;++i) {
+                 sol[k]=i;
+                 if (valid(k)) back(k+1);
+             }
+     }
+   
+    public static void main(String[] args) {
+        Scanner sc;
+            sc = new Scanner(System.in);
+            n=sc.nextInt();
+      back(1);  
+    }
+    
+}

@@ -1,0 +1,54 @@
+
+package javaapplication6;
+
+import java.util.Scanner;
+
+public class JavaApplication6 {
+
+    static int n,i,m,j,nr;
+    static int a[]=new int[100], b[]=new int [100],v[]=new int [100];
+    static int ma[][]=new int [100][100];
+    
+    public static void main(String[] args) {
+          Scanner sc;
+            sc = new Scanner(System.in);
+            n=sc.nextInt();
+            for (i=1;i<=n;++i)
+                a[i]=sc.nextInt();
+            m=sc.nextInt();
+            for (i=1;i<=m;++i)
+                b[i]=sc.nextInt();
+            
+            for (i=1;i<=n;++i)
+                for (j=1;j<=m;++j) {
+                    if (a[i]==b[j]) 
+                        ma[i][j]=ma[i-1][j-1]+1;
+                    else {
+                        ma[i][j]=ma[i-1][j];
+                        if (ma[i][j-1]>ma[i][j])
+                            ma[i][j]=ma[i][j-1];
+                    }
+                }
+          
+         System.out.printf("Lungimea este %d\n",ma[n][m]);
+         
+         i=n;j=m;
+         while (ma[i][j]!=0) {
+             if (ma[i][j]==ma[i-1][j-1]+1) {
+                 ++nr;
+                 v[nr]=a[i];
+                 --i;
+                 --j;
+             }
+             else {
+                 if (ma[i-1][j]==ma[i][j]) --i;
+			else
+                 if (ma[i][j-1]==ma[i][j]) --j;
+             }
+         
+        }
+         for (i=nr;i>=1;--i)
+             System.out.printf("%d ",v[i]);
+    }
+    
+}

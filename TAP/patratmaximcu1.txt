@@ -1,0 +1,48 @@
+package javaapplication1;
+
+import static java.lang.Integer.min;
+import java.util.Scanner;
+
+public class JavaApplication1 {
+    static int ma[][]=new int [100][100],n,m,i,j,maxim,poz1,poz2,nr1,nr2,nr,x,minim=1000;
+     
+    public static void main(String[] args) {
+       Scanner sc;
+       sc=new Scanner(System.in);
+       n=sc.nextInt();
+       m=sc.nextInt();
+       for (i=1;i<=n;++i)
+           for (j=1;j<=m;++j)
+               ma[i][j]=sc.nextInt();
+       
+       System.out.printf("\n");
+       
+       for (i=1;i<=n;++i)
+           for (j=1;j<=m;++j) 
+           if (ma[i][j]!=0) 
+               ma[i][j]=min(ma[i-1][j],ma[i][j-1])+1;
+       
+        
+       for (i=1;i<=n;++i) {
+           for (j=1;j<=m;++j) {
+               if (ma[i][j]>=maxim) {maxim=ma[i][j];poz1=i;poz2=j;}
+               System.out.printf("%d ",ma[i][j]);
+           }
+        System.out.printf("\n");
+       }
+       
+       nr=poz2;
+       while (ma[poz1][nr]!=0) {--nr;++nr1;}
+       
+       nr=poz2;
+       while (ma[poz1][nr-1]!=0) {
+           --nr;
+           x=poz1;nr2=0;
+           while (ma[x][nr]!=0) {--x;++nr2;}
+           if (nr2<minim) minim=nr2;
+       } 
+       
+      System.out.println(nr1*minim);
+    }
+    
+}

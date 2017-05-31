@@ -1,0 +1,118 @@
+#im {
+	height: 5em;
+	width: 100%;
+}
+body {
+    background:url("bc2.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+nav ul {
+   background: linear-gradient(90deg, 
+     rgba(255, 255, 255, 0) 0%, 
+     rgba(255, 255, 255, 0.2) 25%, 
+     rgba(255, 255, 255, 0.2) 75%, 
+     rgba(255, 255, 255, 0.1) 100%);
+}
+nav ul li {
+    display:list-item;
+	position:relative;
+} 
+nav ul ul{ /*drop down*/
+	visibility:hidden;
+	display:table-row-group;
+	position:absolute;
+}
+nav ul li:hover ul{
+	color:red;
+	visibility:visible;
+	z-index:1;
+}
+nav ul li a{
+	margin-left:1em;
+	margin-right:1em;
+    color: red;
+    font-size: 20px;
+    font-family: Arial;
+    display: block;
+}
+
+h1 {
+	margin-top:3.5em;
+	color:red;
+	font-size:1.3em;
+	text-align:center;
+}
+#accesate{	
+	color:red;
+	line-height: 1.3em;
+	font-size: 1.2em;
+	margin:auto;
+}
+h2{
+	color:red;
+	margin-left:2em;
+}
+
+h2::first-letter {
+    font-size: xx-large;
+	margin-left:2em;
+}
+
+#fb {
+	height:4em;
+	width:4em;
+	margin-top:1em;
+}
+
+h3{
+	color:red;
+	margin-top:2em;
+	margin-left:1em;
+	margin-bottom:2em;
+}
+
+#copy {
+	text-align:center; 
+	color:blue;
+	font-size:1.5em;
+}
+
+#contact {
+	font-size:1.3em;
+	color:red;
+}
+#contact p{
+	margin-left:1em;
+}
+aside{
+	padding-bottom:1em;
+	padding-left:1em;
+	padding-right:1em;
+	max-width:25%;
+	min-width:160px;
+	float:right;
+	border:solid 3px;
+	color:blue;
+}
+.buton {
+	margin:auto;
+	color:blue;
+	background-color:white;
+}
+
+aside p {
+	text-align:center;
+	font-size:1.5em;
+	color:blue;
+}
+
+#contact a:hover {
+    color: white;
+}
+
+a:hover {
+    color: blue;
+}

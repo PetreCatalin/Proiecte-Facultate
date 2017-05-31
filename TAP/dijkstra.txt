@@ -1,0 +1,50 @@
+package dijkstra;
+
+import static java.lang.Integer.*;
+import java.util.*;
+
+public class Dijkstra {
+
+    static int d[]=new int [100],i,j,n,m,x,y,c,minim,k,A[][]=new int[100][100],x0,viz[]=new int[100];
+    static boolean ok;
+    
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        n=sc.nextInt();
+        m=sc.nextInt();
+        for (i=1;i<=m;++i) {
+           x=sc.nextInt();
+           y=sc.nextInt();
+           c=sc.nextInt();
+           A[x][y]=c;
+        }
+        x0=sc.nextInt();
+        
+        for (i=1;i<=n;++i)
+            if (A[x0][i]>0) d[i]=A[x0][i];
+            else
+            d[i]=100000;
+        
+        d[x0]=0;viz[x0]=1;
+        ok=true;
+        
+        while (ok==true) {
+            minim=10000;
+            for (i=1;i<=n;++i)
+                if (viz[i]==0 && d[i]<minim) {minim=d[i];k=i;}
+            
+            if (minim==10000) {ok=false;break;}
+            viz[k]=1;
+            
+            for (i=1;i<=n;++i)
+                if (viz[i]==0 && A[k][i]>0) 
+                    if ( d[i] > d[k]+ A[k][i] ) d[i]=d[k]+A[k][i];
+            
+        }
+        
+        for (i=1;i<=n;++i)
+            System.out.printf("%d ",d[i]);
+        
+    }
+    
+}

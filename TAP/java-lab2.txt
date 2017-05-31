@@ -1,0 +1,126 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package javaapplication9;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.Scanner;
+
+
+public class JavaApplication9 {
+    
+    public static void main(String[] args) {
+        Persoana p =new Persoana();
+        try {
+        Scanner sc;
+        sc = new Scanner(new FileReader("D:\\judete.txt"));
+        
+        Scanner input;
+        input=new Scanner(System.in);
+        
+        System.out.print("Introduceti numele\n");
+        p.nume=input.next();
+        System.out.print("Introduceti prenumele\n");
+        p.prenume=input.next();
+        System.out.print("Introduceti cnp-ul\n");
+        p.cnp=input.next();
+        
+        System.out.print("Varsta:");
+        System.out.println(p.get_varsta());
+        System.out.print("Sex:");
+        System.out.println(p.get_sex());
+        System.out.print("Validare CNP:");
+        boolean ok=p.validare_cnp();
+        if (ok==true) System.out.println("CNP-ul e valid");
+        else
+        System.out.println("CNP-ul nu e valid");
+        
+        int codjudet=p.get_judet();
+        System.out.print("Judet:");
+        String x;
+        x = new String();
+        for (int i=1;i<=codjudet;++i) {
+           // sc.nextLine();
+            x=sc.nextLine();
+        }
+        System.out.println(x);
+        
+        }
+        catch (FileNotFoundException ex) {
+            System.out.println("Fisierul nu a fost gasit\n");
+        }
+           
+}
+}
+
+
+//De aici avem alt fisier cu clasa Persoana
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package javaapplication9;
+
+
+public class Persoana {
+    String nume;
+    String prenume;
+    String cnp;
+    
+    public int get_varsta()
+    {
+        int varsta;
+        char []a=cnp.toCharArray();
+        varsta=(a[2]-48)+( a[1]-48)*10;
+        if (a[0]=='1' ||a[0]=='2')
+        varsta+=1900;
+        else
+        if (a[0]=='5' ||a[0]=='6')
+        varsta+=2000;
+        else
+        varsta+=1800;
+        varsta=2015-varsta;
+        return varsta;
+    }
+    
+    public String get_sex()
+    {
+        char []a=cnp.toCharArray();
+        if (a[0]=='1' ||a[0]=='3' ||a[0]=='5')
+            return "masculin";
+        if (a[0]=='2' ||a[0]=='4' ||a[0]=='6')
+            return "feminin";
+        return null;
+    }
+    
+    public int get_judet()
+    { 
+        int cod;
+        char []a=cnp.toCharArray();
+        cod=(a[7]-48)*10+(a[8]-48);
+        return cod;
+    }
+    
+    public boolean validare_cnp()
+    {
+        if (cnp.length()!=13) return false;
+        long cc=0;
+        String s="279146358279";
+        char []a=cnp.toCharArray();
+        char []b=s.toCharArray();
+        for (int i=0;i<12;++i)
+            cc+=(a[i]-48)*(b[i]-48);
+        cc=cc%11;
+        if (cc==10) cc=1;
+       
+        return (a[12]-48) == cc;    
+    }
+    
+}

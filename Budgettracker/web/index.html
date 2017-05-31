@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Budget tracker </title>
+        <style>
+        h1 {
+             margin-top:2em;
+             margin-left:11em;
+             color:blue;
+            }
+        #afis {
+            margin-left:45em;
+            background-color:white;
+            color:red;
+            margin-top:2em;
+            }
+            #stanga,#dreapta,#centru {
+                color:blue;
+                border:solid;
+                float:left;
+                margin-left:5em;
+                margin-top:3em;
+                padding-left:2em;
+                padding-right:2em;
+                padding-bottom:2em;
+                padding-top:2em;
+            }
+            #dreapta {
+                float:right;
+                margin-right:5em;
+            }
+            input { background-color:white;
+            color:red;
+            margin-top:2em;
+            }
+            #centru {
+                margin-left:7.5em;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <h1> Aplicatie pentru monitorizarea bugetului personal </h1>
+        
+        <FORM  METHOD=GET  ACTION="AfisareServlet">
+            <INPUT id="afis"  TYPE="Submit"  VALUE = "Afisare sold actual"> 
+        </form>
+        
+        <aside id="stanga">
+            <h2> Adauga o suma de bani </h2> <br>
+            <FORM  METHOD=GET  ACTION="AdaugaServlet">
+                Suma:  <br>  <INPUT  TYPE="Text"  NAME="Suma" VALUE = "" > <br> <br>
+                Data: <br> <INPUT  TYPE="Text"  NAME="Data" VALUE = "" > <br> <br>
+                Provenienta/Sursa banilor: <br> <INPUT  TYPE="Text"  NAME="Sursa" VALUE = "" > <br> <br>
+            <INPUT  TYPE="Submit"  VALUE = "Adauga suma"> 
+            </form>
+        </aside>
+        
+        <aside id="dreapta">
+            <h2> Retrage o suma de bani </h2> <br>
+             <FORM  METHOD=GET  ACTION="RetrageServlet">
+                Suma:  <br>  <INPUT  TYPE="Text"  NAME="Suma" VALUE = "" > <br> <br>
+                Data: <br> <INPUT  TYPE="Text"  NAME="Data" VALUE = "" > <br> <br>
+                Motivul retragerii: <br> <INPUT  TYPE="Text"  NAME="Motiv" VALUE = "" > <br> <br>
+                Lista de cumparaturi: <br> <textarea name="produse" cols="30" rows="8">Introduceti produsele cumparate</textarea> <br> <br>
+            <INPUT  TYPE="Submit"  VALUE = "Retrage suma"> 
+            </form>
+        </aside>
+        
+        <aside id="centru">
+        <FORM METHOD=GET  ACTION="DataServlet">
+             Data:  <br>  <INPUT  TYPE="Text"  NAME="Data" VALUE = "" > <br> <br>
+             <INPUT TYPE="Submit"  VALUE = "Afisare tranzactii de la o anumita data"> <br> <br> <br>
+             <hr>
+        </form>
+        <FORM METHOD=GET  ACTION="AddServlet">
+            <INPUT TYPE="Submit"  VALUE = "Vizualizati toate sumele adaugate"> <br> <br> <hr>
+        </form>
+        <FORM METHOD=GET  ACTION="RetServlet">
+            <INPUT TYPE="Submit"  VALUE = "Vizualizati toate sumele retrase"> <br> <br> <hr>
+        </form>
+        </aside>
+        
+    </body>
+</html>
